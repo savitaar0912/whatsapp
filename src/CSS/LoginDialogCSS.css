@@ -1,0 +1,11 @@
+.qr{
+    margin-top: 30px;
+    position: relative;
+}
+
+.title{
+    font-size: xx-large;
+    color: rgb(100, 99, 99);
+    font-family: inherit;
+    margin-bottom: 30px;
+}
