@@ -1,13 +1,12 @@
-// Import necessary dependencies
+import '../../CSS/LoginDialogCSS.css';
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { Box, Dialog, List, ListItem } from '@mui/material';
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode'; // Update with the correct path
-import '../../CSS/LoginDialogCSS.css';
 import { qrCodeImage } from '../../constants/data';
-import { add } from '../../store/userSlice';
+import { addUser } from '../../store/userSlice';
 
 function LoginDialog() {
 
@@ -26,18 +25,20 @@ function LoginDialog() {
 
     const component = {
         display: 'flex',
+        flexWrap: 'wrap'
     };
 
     const container = {
-        padding: '56px',
+        padding: '50px',
     };
 
     const LoginSuccess = (res) => {
         const decodedToken = jwtDecode(res.credential);
         console.log(decodedToken);
+        console.log(decodedToken.email);
 
         // Dispatch the 'add' action to add the user to the Redux store
-        dispatch(add(decodedToken));
+        dispatch(addUser(decodedToken));
 
         navigate('/chat');
     };
@@ -53,21 +54,19 @@ function LoginDialog() {
                     <Box sx={container}>
                         <p className='title'>Use Whatsapp on your Computer</p>
                         <List>
-                            <ListItem>1. Open WhatsApp on your phone</ListItem>
+                            <ListItem>1. Open WhatsApp on your phone.</ListItem>
                             <ListItem>
-                                2. Tap&nbsp;<strong>Menu </strong>&nbsp;on Android, or&nbsp;
-                                <strong>Settings </strong>&nbsp; on iPhone
+                                2. Tap Menu on Android, or Settings on iPhone.
                             </ListItem>
                             <ListItem>
-                                3. Tap&nbsp;<strong>Linked devices</strong>&nbsp;and then&nbsp;
-                                <strong>Link a device</strong>
+                                3. Tap Linked devices and then Link a device.
                             </ListItem>
                             <ListItem>4. Point your phone at this screen to capture the QR code</ListItem>
                         </List>
                     </Box>
                     <Box className='qr'>
                         <img className='qr' src={qrCodeImage} alt='QR Code' />
-                        <Box style={{ position: 'absolute', top: '165px', left: '80px' }}>
+                        <Box className='googlelogin'>
                             <GoogleLogin onSuccess={LoginSuccess} onError={LoginError} />
                         </Box>
                     </Box>

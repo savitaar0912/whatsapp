@@ -1,0 +1,27 @@
+.header {
+  background-color: #ededed;
+  height: 44px;
+  padding: 8px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gimg {
+  border-radius: 50px;
+  height: 40px;
+  width: 40px;
+}
+
+.icons {
+  margin-left: auto;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.icons > * {
+  margin: 3px;
+  padding: 3px;
+  color: #696969;
+}

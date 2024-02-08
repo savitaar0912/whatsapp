@@ -1,11 +1,30 @@
-.qr{
-    margin-top: 30px;
-    position: relative;
+.qr {
+  margin-top: 30px;
+  position: relative;
 }
 
-.title{
-    font-size: xx-large;
-    color: rgb(100, 99, 99);
-    font-family: inherit;
-    margin-bottom: 30px;
+.googlelogin{
+  position: absolute;
+  top: 160px;
+  left: 60px;
+}
+
+.title {
+  font-size: xx-large;
+  color: rgb(100, 99, 99);
+  font-family: inherit;
+  margin-bottom: 30px;
+}
+
+@media screen and (max-width: 768px) {
+  .qr {
+    max-height: 250px;
+    max-width: 250px;
+    position: relative;
+  }
+  .googlelogin {
+    position: absolute;
+    top: 135px;
+    left: 35px;
+  }
 }
