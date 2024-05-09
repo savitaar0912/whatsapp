@@ -49,7 +49,7 @@ function LoginDialog() {
 
     return (
         <>
-            <Dialog open={true} PaperProps={{ sx: dialog }} hideBackdrop={true}>
+            <Dialog open={true} PaperProps={{ sx: dialog }} hideBackdrop={true}> 
                 <Box sx={component}>
                     <Box sx={container}>
                         <p className='title'>Use Whatsapp on your Computer</p>

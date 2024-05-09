@@ -1,0 +1,26 @@
+.chatright {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #f7faff;
+  height: 96vh;
+}
+
+.chatright > img {
+  object-fit: contain;
+  width: 50%;
+  /* height: 50%; */
+  margin-top: 100px;
+}
+
+.download {
+  margin-top: 10px;
+  color: #41525d;
+}
+
+.download > h1 {
+  align-items: center;
+  font-weight: 200;
+  justify-content: center;
+  display: flex;
+}
