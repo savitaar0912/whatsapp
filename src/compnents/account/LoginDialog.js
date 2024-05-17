@@ -1,16 +1,15 @@
 import '../../CSS/LoginDialogCSS.css';
 import React from 'react';
 import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
 import { Box, Dialog, List, ListItem } from '@mui/material';
 import { GoogleLogin } from '@react-oauth/google';
 import { jwtDecode } from 'jwt-decode'; // Update with the correct path
 import { qrCodeImage } from '../../constants/data';
 import { addUser } from '../../store/userSlice';
+import { addUSER } from '../../services/api';
 
 function LoginDialog() {
 
-    const navigate = useNavigate();
     const dispatch = useDispatch(); // Get the dispatch function from Redux
 
     const dialog = {
@@ -32,15 +31,14 @@ function LoginDialog() {
         padding: '50px',
     };
 
-    const LoginSuccess = (res) => {
+    const LoginSuccess = async (res) => {
         const decodedToken = jwtDecode(res.credential);
         console.log(decodedToken);
-        console.log(decodedToken.email);
+        // console.log(decodedToken.email);
 
-        // Dispatch the 'add' action to add the user to the Redux store
+        // Dispatch the 'add' action to add the user to the Redux store and API
         dispatch(addUser(decodedToken));
-
-        navigate('/chat');
+        await addUSER(decodedToken)
     };
 
     const LoginError = (res) => {

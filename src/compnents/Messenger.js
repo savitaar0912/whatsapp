@@ -2,9 +2,14 @@ import React from 'react'
 import LoginDialog from './account/LoginDialog';
 import { AppBar, Box, Toolbar } from '@mui/material';
 import Chatscreen from './chat/Chatscreen';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+import { selectUser } from '../store/userSlice';
 
 function Messenger() {
+
+  const accounts = useSelector(selectUser)
+  console.log(accounts)
+  console.log(accounts.length)
 
   const appbar = {
     backgroundColor: '#00a884',
@@ -14,17 +19,16 @@ function Messenger() {
 
   return (
     <>
-      <Box sx={{height: '100vh' , background: '#d3ede6'}} >
-        <AppBar sx={appbar}>
-          <Toolbar>
-          </Toolbar>
-        </AppBar>
-        <Router>
-          <Routes>
-            <Route path='/' element={<LoginDialog/>} />
-            <Route path='/chat' element={<Chatscreen/>} />
-          </Routes>
-        </Router>
+      <Box sx={{ height: '100vh', background: '#d3ede6' }} >
+        {accounts.length > 0 ? <Chatscreen /> :
+          <>
+            <AppBar sx={appbar}>
+              <Toolbar>
+              </Toolbar>
+            </AppBar>
+            <LoginDialog />
+          </>
+        }
       </Box>
     </>
   )

@@ -6,11 +6,15 @@ import MenuItem from '@mui/material/MenuItem';
 import { MoreVert } from '@mui/icons-material';
 
 export default function Moreoptions() {
+  
   const [anchorEl, setAnchorEl] = React.useState(null);
+
   const open = Boolean(anchorEl);
+  
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
   };
+  
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -32,13 +36,14 @@ export default function Moreoptions() {
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
-        MenuListProps={{
-          'aria-labelledby': 'basic-button',
+        transformOrigin={{
+          vertical: 'top',
+          horizontal: 'right'
         }}
       >
-        <MenuItem onClick={handleClose}>Profile</MenuItem>
-        <MenuItem onClick={handleClose}>My account</MenuItem>
-        <MenuItem onClick={handleClose}>Logout</MenuItem>
+        <MenuItem>Profile</MenuItem>
+        <MenuItem>My account</MenuItem>
+        <MenuItem>Logout</MenuItem>
       </Menu>
     </>
   );
