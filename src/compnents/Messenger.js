@@ -8,8 +8,7 @@ import { selectUser } from '../store/userSlice';
 function Messenger() {
 
   const accounts = useSelector(selectUser)
-  console.log(accounts)
-  console.log(accounts.length)
+  // console.log(accounts)
 
   const appbar = {
     backgroundColor: '#00a884',
