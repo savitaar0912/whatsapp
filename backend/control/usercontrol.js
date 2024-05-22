@@ -11,10 +11,18 @@ export const addUsers = async (req, res) => {
 
         const newUser = new User(req.body)
         await newUser.save()
-        return res.status(100).json(newUser)
+        return res.status(200).json(newUser)
     }
     catch(error){
         return res.status(400).json(error.message);
     }
 }
 
+export const getUsers = async (req,res) => {
+    try {
+        const allUsers = await User.find()
+        return res.status(200).json(allUsers)
+    } catch (error) {
+        return res.status(400).json(error.message)
+    }
+}

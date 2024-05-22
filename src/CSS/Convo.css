@@ -1,0 +1,19 @@
+.box {
+  display: flex;
+  align-items: center;
+  margin: 5px 0 5px 5px;
+}
+
+.dp {
+  padding: 5px;
+}
+
+.dp > img {
+  border-radius: 50px;
+  height: 40px;
+  width: 40px;
+}
+
+.name{
+    margin: 0 0 20px 20px;
+}
