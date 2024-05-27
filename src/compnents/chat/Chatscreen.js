@@ -1,9 +1,11 @@
 import '../../CSS/Chatscreen.css'
 import { Box, Dialog } from '@mui/material'
 import React from 'react'
-import Chats from './Chats';
 import Menu from './Menu';
-
+import ChatBox from './Chatlog/ChatBox';
+import Chats from './Chats';
+import { selectPerson } from '../../store/userSlice';
+import { useSelector } from 'react-redux';
 function Chatscreen() {
 
   const dialog = {
@@ -15,6 +17,8 @@ function Chatscreen() {
     overFlow: 'hidden',
     margin: '0px',
   };
+
+  const person = useSelector(selectPerson)
 
   return (
     <Dialog 
@@ -28,7 +32,7 @@ function Chatscreen() {
           <Menu/>
         </Box>
         <Box className='right'>
-          <Chats/>
+          {person ? <ChatBox/> : <Chats/>}
         </Box>
       </Box>
     </Dialog>

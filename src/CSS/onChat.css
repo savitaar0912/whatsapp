@@ -1,0 +1,26 @@
+.chatting {
+  height: 83vh;
+  position: relative;
+  z-index: 0;
+  color: black;
+  font-size: medium;
+
+  &::before {
+    content: "";
+    background: url("../constants/background.jpg");
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    opacity: 0.9;
+  }
+}
+
+.sent{
+    background-color: white;
+    width: 30vw;
+    border: 2px solid rgb(160, 160, 160);
+    border-radius: 8px;
+}

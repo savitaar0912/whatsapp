@@ -1,0 +1,30 @@
+.chatFooter {
+  display: flex;
+  align-items: center;
+  height: 34px;
+  padding: 8px 10px;
+  background-color: #ededed;
+
+  & > svg {
+    margin: 0 10px;
+  }
+}
+
+.attachfile {
+  transform: rotate(45deg);
+}
+
+.inputbase {
+  position: relative;
+  left: 5px;
+  border-radius: 10px;
+  width: 55vw;
+  height: 25px;
+  padding: 10px;
+  background-color: white;
+}
+
+.mic {
+  margin-left: auto !important;
+  padding-right: 15px;
+}

@@ -1,0 +1,40 @@
+.chatHeader {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  padding: 8px 10px;
+  background-color: #ededed;
+
+  & > img {
+    margin: 2px;
+    padding: 2px;
+    border-radius: 50px;
+    height: 40px;
+    width: 40px;
+  }
+}
+
+.chatHeader > div > p:first-child {
+  font-weight: 700;
+}
+
+.chatHeader > div > p:last-child {
+  text-align: center;
+  font-size: 16px;
+  color: rgb(0, 0, 0, 0.6);
+}
+
+.userInfo{
+    margin: 0 10px;
+}
+
+.headerIcons {
+  margin-left: auto;
+  padding: 15px;
+
+  & > svg {
+    margin: 0 5px;
+    color: black;
+    font-size: xx-large;
+  }
+}
