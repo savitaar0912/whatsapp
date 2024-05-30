@@ -5,7 +5,7 @@ function OnChat() {
   return (
     <div className='chatting'>
       <div className="sent">
-        Ongoing chat with Self
+        Ongoing chat
       </div>
     </div>
   )

@@ -19,6 +19,7 @@ function Chatscreen() {
   };
 
   const person = useSelector(selectPerson)
+  console.log(person)
 
   return (
     <Dialog 
@@ -32,7 +33,7 @@ function Chatscreen() {
           <Menu/>
         </Box>
         <Box className='right'>
-          {person ? <ChatBox/> : <Chats/>}
+          {person.length===0 ? <Chats/> : <ChatBox/>}
         </Box>
       </Box>
     </Dialog>
