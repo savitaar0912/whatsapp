@@ -19,7 +19,6 @@ function Chatscreen() {
   };
 
   const person = useSelector(selectPerson)
-  console.log(person)
 
   return (
     <Dialog 

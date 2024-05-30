@@ -1,12 +1,16 @@
 import '../../CSS/Convo.css'
 import React from 'react'
 import { Divider } from '@mui/material'
-import { useDispatch } from 'react-redux'
-import { oneUser } from '../../store/userSlice'
+import { useDispatch, useSelector } from 'react-redux'
+import { oneUser, selectPerson, selectUser } from '../../store/userSlice'
+import { setConversation } from './../../services/api';
 
 export default function Convo({ acc }) {
 
     const dispatch = useDispatch()
+
+    const sender = useSelector(selectUser)
+    const receiver = useSelector(selectPerson)
 
     const divid = {
         backgroundColor: '#e9edef',
@@ -14,8 +18,9 @@ export default function Convo({ acc }) {
         margin: '0 10px 0 10px'
     }
 
-    const handlePerson = () => {
+    const handlePerson = async () => {
         dispatch(oneUser(acc))
+        await setConversation({senderId: sender[0].sub , receiverId: receiver.sub})
     }
 
     return (

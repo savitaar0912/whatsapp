@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Header from './Header'
 import Searchbar from './Searchbar'
 import Conversations from './Conversations';
 
 function Menu() {
+
+  const [text, setText] = useState("")
+
   return (
     <>
       <Header />
-      <Searchbar />
-      <Conversations/>
+      <Searchbar setText={setText} />
+      <Conversations text={text} />
     </>
   )
 }

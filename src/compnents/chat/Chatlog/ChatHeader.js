@@ -9,7 +9,6 @@ function ChatHeader() {
 
     const person = useSelector(selectPerson)
     console.log(person)
-    console.log(person.given_name)
 
     return (
         <>
