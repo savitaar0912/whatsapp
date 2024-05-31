@@ -4,6 +4,7 @@
   z-index: 0;
   color: black;
   font-size: medium;
+  overflow-y: scroll;
 
   &::before {
     content: "";
