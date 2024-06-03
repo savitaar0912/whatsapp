@@ -1,6 +1,7 @@
 import express from 'express'
 import { addUsers, getUsers } from '../control/usercontrol.js'
-import { newConvo } from '../control/convocontrol.js';
+import { getConvo, newConvo } from '../control/convocontrol.js';
+import { addMessage, getAllMessages } from '../control/messagecontrol.js';
 
 const route = express.Router()
 
@@ -8,6 +9,12 @@ const route = express.Router()
 
 route.post('/add', addUsers)
 route.get('/fetch', getUsers)
+
 route.post('/convo/add', newConvo)
+route.post('/convo/get', getConvo)
+
+route.post('/message/add', addMessage)
+route.get('/message/get/:id' , getAllMessages)
+
 
 export default route

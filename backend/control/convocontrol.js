@@ -24,3 +24,15 @@ export const newConvo = async (req, res) => {
         return res.status(400).json(error.message);
     }
 }
+
+export const getConvo = async (req,res) => {
+    try {
+        const senderId = req.body.senderId
+        const receiverId = req.body.receiverId
+
+        const Conversation = await Convo.findOne({ members: { $all: [receiverId, senderId] } })
+        return res.status(200).json(Conversation)
+    } catch (error) {
+        return res.status(400).json(error.message);
+    }
+}

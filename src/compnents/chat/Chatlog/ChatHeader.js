@@ -8,7 +8,7 @@ import { selectPerson } from '../../../store/userSlice';
 function ChatHeader() {
 
     const person = useSelector(selectPerson)
-    console.log(person)
+    // console.log(person)
 
     return (
         <>

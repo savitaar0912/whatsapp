@@ -9,7 +9,7 @@ import Moreoptions from './MoreOptions';
 export default function Header() {
 
   const user = useSelector(selectUser);
-  console.log(user)
+  // console.log(user)
   // console.log(user[0])
   const GImage = user[0].picture
 

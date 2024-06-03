@@ -19,7 +19,7 @@ export default function Convo({ acc }) {
     }
 
     const handlePerson = async () => {
-        dispatch(oneUser(acc))
+        await dispatch(oneUser(acc))
         await setConversation({senderId: sender[0].sub , receiverId: receiver.sub})
     }
 

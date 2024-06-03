@@ -1,12 +1,9 @@
 import '../../../CSS/ChatFooter.css'
-import React, { useState } from 'react'
+import React from 'react'
 import { InsertEmoticon, AttachFile, Mic } from '@mui/icons-material';
 import { InputBase } from '@mui/material';
 
-function ChatFooter() {
-
-
-  const [text, settext] = useState('')
+function ChatFooter({ value, setValue, handleKeydown }) {
 
   return (
     <>
@@ -15,8 +12,9 @@ function ChatFooter() {
         <AttachFile className='attachfile' />
         <InputBase className='inputbase'
           placeholder='Type a message'
-          value={text}
-          onChange={(e)=>settext(e.target.value)}
+          onChange={(e) => setValue(e.target.value)}
+          onKeyDown={handleKeydown}
+          value={value}
         />
         <Mic className='mic' />
       </div>

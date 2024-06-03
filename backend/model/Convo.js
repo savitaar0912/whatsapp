@@ -11,5 +11,5 @@ const convoSchema = new mongoose.Schema({
     timestamps: true
 })
 
-const Convo = mongoose.model('Message' , convoSchema)
+const Convo = mongoose.model('Convo' , convoSchema)
 export default Convo

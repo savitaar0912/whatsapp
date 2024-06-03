@@ -33,7 +33,7 @@ function LoginDialog() {
 
     const LoginSuccess = async (res) => {
         const decodedToken = jwtDecode(res.credential);
-        console.log(decodedToken);
+        // console.log(decodedToken);
         // console.log(decodedToken.email);
 
         // Dispatch the 'add' action to add the user to the Redux store and API
